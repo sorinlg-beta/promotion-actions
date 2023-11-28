@@ -1,0 +1,25 @@
+name: Open Request Promotion
+description: Opens a request for promotion
+inputs:
+  github-token:
+    description: The GitHub token used to create an authenticated client
+    default: ${{ github.token }}
+    required: false
+  stages:
+    required: false
+    description: Stages for the promotion
+    default: '["main", "staging:auto", "canary", "production"]'
+  source:
+    required: true
+    description: Source for the promotion
+  updateCommitStatus:
+    required: false
+    description: Update commit status
+    default: ${{ true }}
+  context:
+    required: false
+    description: Context for promotion commit status messages
+    default: promotion
+runs:
+  using: node20
+  main: dist/index.js

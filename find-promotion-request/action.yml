@@ -1,0 +1,23 @@
+name: Find Promotion Request
+description: Finds a promotion request
+inputs:
+  github-token:
+    description: The GitHub token used to create an authenticated client
+    default: ${{ github.token }}
+    required: false
+  targetRefs:
+    description: Target references for the promotion
+    default: '["staging", "canary", "production"]'
+    required: false
+outputs:
+  promoteable:
+    description: Whether a promoteable PR was found
+  prNumber:
+    description: The number of the PR
+  headRef:
+    description: The HEAD ref of the PR
+  baseRef:
+    description: The base ref of the PR
+runs:
+  using: node20
+  main: dist/index.js

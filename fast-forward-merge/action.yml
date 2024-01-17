@@ -1,0 +1,12 @@
+name: Fast-Forward Merge
+description: Performs a fast-forward merge
+inputs:
+  headRef:
+    required: true
+    description: Head reference for the merge
+  baseRef:
+    required: true
+    description: Base reference for the merge
+runs:
+  using: node20
+  main: dist/index.js

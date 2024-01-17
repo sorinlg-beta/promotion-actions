@@ -1,0 +1,24 @@
+{
+  "name": "fast-forward-merge",
+  "author": "Robin Breathe, Nexthink SA",
+  "version": "1.0.0",
+  "license": "MIT",
+  "main": "dist/main.js",
+  "scripts": {
+    "build": "ncc build src/index.ts --license licenses.txt",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "exports": {
+    ".": "./dist/index.js"
+  },
+  "engines": {
+    "node": ">=20.0.0 <21.0.0"
+  },
+  "dependencies": {
+    "@actions/core": "^1.10.1",
+    "@actions/exec": "^1.1.1"
+  },
+  "devDependencies": {
+    "typescript": "^5.3.2"
+  }
+}

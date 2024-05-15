@@ -20,6 +20,6 @@
     "@octokit/rest": "^20.0.2"
   },
   "devDependencies": {
-    "typescript": "^5.4.2"
+    "typescript": "^5.4.5"
   }
 }

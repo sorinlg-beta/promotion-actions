@@ -1,0 +1,17 @@
+name: "Checkout"
+description: "Custom checkout for PRs"
+inputs:
+  token:
+    description: "Explicitely provide secrets.GITHUB_TOKEN here"
+    required: true
+runs:
+  using: "composite"
+  steps:
+    - name: Checkout
+      uses: actions/checkout@v4
+    - name: Checkout PR
+      shell: bash
+      if: ${{ github.event_name == 'issue_comment' && github.event.issue.pull_request }}
+      run: hub pr checkout ${{ github.event.issue.number }}
+      env:
+        GITHUB_TOKEN: ${{ inputs.token }}
